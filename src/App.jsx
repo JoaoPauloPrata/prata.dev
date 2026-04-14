@@ -9,12 +9,9 @@ import Testimonials from './components/Testimonials'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
-import AuroraBackground from './components/AuroraBackground'
-
 export default function App() {
   return (
     <LangProvider>
-      <AuroraBackground />
       <LangToggle />
       <Nav />
       <Hero />
