@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { useLang } from '../context/LangContext'
 import buraconegro from '../assets/buraconegro.png'
 
@@ -7,7 +7,34 @@ const WORMHOLE_VIDEO_URL = 'https://pub-ab3bdd2e745d4c9ba331761d40922a00.r2.dev/
 export default function Hero() {
   const heroRef = useRef(null)
   const videoRef = useRef(null)
+  const emRef = useRef(null)
   const { t } = useLang()
+  const [phraseIndex, setPhraseIndex] = useState(0)
+  const [emWidth, setEmWidth] = useState('auto')
+
+  // Calculate width of longest phrase to prevent text jumping
+  useEffect(() => {
+    if (!t.hero.h1Phrases || !emRef.current) return
+
+    const longestPhrase = t.hero.h1Phrases.reduce((max, p) =>
+      p.length > max.length ? p : max
+    )
+
+    const temp = emRef.current.textContent
+    emRef.current.textContent = longestPhrase
+    const width = emRef.current.offsetWidth
+    setEmWidth(width)
+    emRef.current.textContent = temp || ''
+  }, [t.hero.h1Phrases])
+
+  // Rotate phrases with crossfade every 4 seconds
+  useEffect(() => {
+    if (!t.hero.h1Phrases || t.hero.h1Phrases.length === 0) return
+    const interval = setInterval(() => {
+      setPhraseIndex(prev => (prev + 1) % t.hero.h1Phrases.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [t.hero.h1Phrases])
 
   useEffect(() => {
     const hero = heroRef.current
@@ -56,6 +83,7 @@ export default function Hero() {
     if (!video) return
 
     const onCanPlay = () => {
+      video.playbackRate = 0.3
       video.play().catch(() => {})
       video.classList.add('hero-video-bg--ready')
     }
@@ -98,7 +126,17 @@ export default function Hero() {
         playsInline
       />
       <p className="hero-eyebrow">{t.hero.eyebrow}</p>
-      <h1>{t.hero.h1} <em>{t.hero.h1Em}</em></h1>
+      <h1>
+        {t.hero.h1}
+        <em
+          ref={emRef}
+          key={phraseIndex}
+          className="h1-em-fade"
+          style={{ width: typeof emWidth === 'number' ? `${emWidth}px` : emWidth }}
+        >
+          {t.hero.h1Phrases?.[phraseIndex] || t.hero.h1Em}
+        </em>
+      </h1>
       <p>{t.hero.p}</p>
       <div className="hero-btns">
         <div className="btn-star-wrap">
