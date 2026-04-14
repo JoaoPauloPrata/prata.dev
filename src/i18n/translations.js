@@ -1,4 +1,4 @@
-const WA_NUMBER = '5531999999999'
+const WA_NUMBER = '37999552181'
 
 export const translations = {
   pt: {
@@ -14,13 +14,13 @@ export const translations = {
       h1: 'Seu negócio merece um site que',
       h1Em: 'realmente vende',
       h1Phrases: ['realmente vende', 'realmente atrai', 'brilha os olhos'],
-      p: 'Criamos sites modernos para pequenos negócios e autônomos que querem aparecer online, atrair clientes e crescer de verdade.',
+      p: 'Criamos sites modernos para negócios que querem aparecer online, atrair clientes e crescer de verdade.',
       btnPrimary: 'Quero meu site agora',
       btnGhost: 'Como funciona',
       waMsg: encodeURIComponent('Oi João! Vi seu site e quero saber mais sobre criar meu site.'),
     },
     stats: [
-      { num: '+80%', label: 'dos clientes vêm pelo Google' },
+      { num: '+30%', label: 'mais clientes no primeiro ano' },
       { num: '7 dias', label: 'prazo médio de entrega' },
       { num: '100%', label: 'feito para converter' },
     ],
@@ -66,7 +66,7 @@ export const translations = {
       waMsg: encodeURIComponent('Oi João! Vi seu site e quero saber mais sobre criar meu site.'),
     },
     footer: {
-      copy: '© 2025 João Prata · Desenvolvimento web para pequenos negócios',
+      copy: '© 2025 João Prata · Desenvolvimento web',
     },
     whatsapp: {
       title: 'Falar no WhatsApp',
@@ -87,13 +87,13 @@ export const translations = {
       h1: 'Your business deserves a website that',
       h1Em: 'actually sells',
       h1Phrases: ['actually sells', 'really attracts', 'catches eyes'],
-      p: 'We build modern websites for small businesses and freelancers who want to appear online, attract clients, and grow for real.',
+      p: 'We build modern websites for businesses that want to appear online, attract clients, and grow for real.',
       btnPrimary: 'I want my website now',
       btnGhost: 'How it works',
       waMsg: encodeURIComponent('Hi João! I saw your website and would like to know more about building my site.'),
     },
     stats: [
-      { num: '+80%', label: 'of clients come from Google' },
+      { num: '+30%', label: 'more clients in the first year' },
       { num: '7 days', label: 'average delivery time' },
       { num: '100%', label: 'built to convert' },
     ],
@@ -139,7 +139,7 @@ export const translations = {
       waMsg: encodeURIComponent('Hi João! I saw your website and would like to know more about building my site.'),
     },
     footer: {
-      copy: '© 2025 João Prata · Web development for small businesses',
+      copy: '© 2025 João Prata · Web development',
     },
     whatsapp: {
       title: 'Chat on WhatsApp',

@@ -207,21 +207,6 @@ video.hero-video-bg.hero-video-bg--ready {
     0 0 80px rgba(255, 255, 255, 0.2);
 }
 
-.h1-em-fade {
-  display: inline-block;
-  animation: fade-in-crossfade 0.8s ease-in-out;
-}
-
-@keyframes fade-in-crossfade {
-  0% {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* ---- Hero parallax layers (driven by --mx / --my set via JS) ---- */
 .hero .hero-eyebrow {
