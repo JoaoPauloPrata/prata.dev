@@ -1,7 +1,8 @@
 import { useRef, useEffect } from 'react'
 import { useLang } from '../context/LangContext'
-import wormhole from '../assets/wormhole.mp4'
 import buraconegro from '../assets/buraconegro.png'
+
+const WORMHOLE_VIDEO_URL = 'https://pub-ab3bdd2e745d4c9ba331761d40922a00.r2.dev/wormhole.mp4'
 
 export default function Hero() {
   const heroRef = useRef(null)
@@ -60,7 +61,7 @@ export default function Hero() {
     }
 
     video.addEventListener('canplay', onCanPlay, { once: true })
-    video.src = wormhole
+    video.src = WORMHOLE_VIDEO_URL
 
     const observer = new IntersectionObserver(
       ([entry]) => {
